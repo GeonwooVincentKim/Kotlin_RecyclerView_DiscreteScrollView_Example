@@ -1,0 +1,2 @@
+# Kotlin_RecyclerView_DiscreteScrollView_Example
+Generated DiscreteScrollView example with the feature of RecyclerView in Kotlin
