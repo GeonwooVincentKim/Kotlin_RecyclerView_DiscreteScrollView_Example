@@ -70,6 +70,9 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemView.setOnClickListener {
                 val position: Int = absoluteAdapterPosition
                 Toast.makeText(itemView.context, "you clicked on ${titles[position]}", Toast.LENGTH_LONG).show()
+
+//                val padding: Int = ScreenUtils.getScreenWidth(this) / 2
+
             }
         }
     }
