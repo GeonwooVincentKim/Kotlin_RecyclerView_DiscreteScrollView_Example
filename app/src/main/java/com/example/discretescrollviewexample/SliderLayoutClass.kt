@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 //import android.support.v7.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import kotlin.math.abs
+import kotlin.math.sqrt
 
 class SliderLayoutClass(context: Context?): LinearLayoutManager(context) {
     init {
@@ -33,12 +35,12 @@ class SliderLayoutClass(context: Context?): LinearLayoutManager(context) {
         recycler: RecyclerView.Recycler?,
         state: RecyclerView.State?
     ): Int {
-        if (orientation == LinearLayoutManager.HORIZONTAL) {
+        return if (orientation == LinearLayoutManager.HORIZONTAL) {
             val scrolled = super.scrollHorizontallyBy(dx, recycler, state)
             scaleDownView()
-            return scrolled
+            scrolled
         } else {
-            return 0
+            0
         }
     }
 
@@ -49,10 +51,10 @@ class SliderLayoutClass(context: Context?): LinearLayoutManager(context) {
             // Calculating the distance of the child from the center
             val child = getChildAt(i)
             val childMid = (getDecoratedLeft(child!!) + getDecoratedRight(child)) / 2.0f
-            val distanceFromCenter = Math.abs(mid - childMid)
+            val distanceFromCenter = abs(mid - childMid)
 
             // The scaling formula
-            val scale = 1 - Math.sqrt((distanceFromCenter / width).toDouble()).toFloat() * 0.66f
+            val scale = 1 - sqrt((distanceFromCenter / width).toDouble()).toFloat() * 0.66f
 
             // Set scale to view
             child.scaleX = scale

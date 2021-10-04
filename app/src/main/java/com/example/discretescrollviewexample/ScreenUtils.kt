@@ -7,7 +7,7 @@ import android.view.WindowManager
 
 class ScreenUtils {
     companion object {
-
+        /* Get Screen Width */
         fun getScreenWidth(context: Context): Int {
             val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             val dm = DisplayMetrics()
@@ -15,6 +15,7 @@ class ScreenUtils {
             return dm.widthPixels
         }
 
+        /* Convert `DP` to `PX` */
         fun dpToPx(context: Context, value: Int) : Int {
             return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), context.resources.displayMetrics).toInt()
         }
