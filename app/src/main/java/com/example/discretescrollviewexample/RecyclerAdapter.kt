@@ -47,7 +47,9 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.itemTitle.text = titles[position]
+        holder.itemDetail.text = details[position]
+        holder.itemImage.setImageResource(images[position])
     }
 
     override fun getItemCount(): Int {
