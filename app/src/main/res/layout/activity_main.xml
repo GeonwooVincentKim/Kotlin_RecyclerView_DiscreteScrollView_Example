@@ -6,34 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/tv_selected_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/stringSelectedItem"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_selected_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_item_title"
+        tools:text="5" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewExample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
         android:text="@string/stringTestingProject"
-        android:layout_marginTop="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal"
-        android:clipToPadding="false"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_selected_item" />
 
-<!--    <com.yarolegovich.discretescrollview.DiscreteScrollView-->
-<!--        android:id="@+id/picker"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="50sp"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/recyclerViewExample"-->
-<!--        app:dsv_orientation="horizontal"-->
-<!--        tools:ignore="MissingConstraints" />-->
-<!--    <com.yarolegovich.discretescrollview.DiscreteScrollView-->
-<!--        android:id="@+id/picker"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="50sp"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:dsv_orientation="horizontal"-->
-<!--        tools:ignore="MissingConstraints" />-->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewExample"
+        android:background="#ffffff"
+        android:alpha="0.2"
+        android:contentDescription="@string/stringBottomImage" />
+
+    <!--    <com.yarolegovich.discretescrollview.DiscreteScrollView-->
+    <!--        android:id="@+id/picker"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="50sp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/recyclerViewExample"-->
+    <!--        app:dsv_orientation="horizontal"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+    <!--    <com.yarolegovich.discretescrollview.DiscreteScrollView-->
+    <!--        android:id="@+id/picker"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="50sp"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:dsv_orientation="horizontal"-->
+    <!--        tools:ignore="MissingConstraints" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

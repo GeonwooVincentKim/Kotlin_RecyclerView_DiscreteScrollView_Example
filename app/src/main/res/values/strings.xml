@@ -2,4 +2,6 @@
     <string name="app_name">DiscreteScrollViewExample</string>
     <string name="stringItemImages">itemImages</string>
     <string name="stringTestingProject">Testing Project</string>
+    <string name="stringBottomImage">bottomImage</string>
+    <string name="stringSelectedItem">Selected Item:</string>
 </resources>
