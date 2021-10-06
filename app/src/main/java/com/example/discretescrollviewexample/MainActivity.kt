@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 //import android.preference.PreferenceManager
 import androidx.preference.PreferenceManager
 import android.view.View
@@ -51,6 +52,8 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        })
 
+//        val tvSelectedItem: TextView = findViewById(R.id.tv_selected_item)
+
         // Setting layout manager
         recyclerViewExample.layoutManager = SliderLayoutClass(this).apply {
             callback = object : SliderLayoutClass.OnItemSelectedListener {
@@ -76,6 +79,8 @@ class MainActivity : AppCompatActivity() {
         val getPreferences: SharedPreferences = getSharedPreferences("lastPosition", Context.MODE_PRIVATE)
 //        val getPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         lastPosition = getPreferences.getInt("lastPos", 0)
+        tvSelectedItem.text = getPreferences.getString("tvSelectedItem", lastPosition.toString())
+        Log.d("Testing...", lastPosition.toString())
         recyclerViewExample.scrollToPosition(lastPosition)
 
         recyclerViewExample.addOnScrollListener(object: RecyclerView.OnScrollListener(){
@@ -93,6 +98,7 @@ class MainActivity : AppCompatActivity() {
 //        val getPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         val e: SharedPreferences.Editor = getPreferences.edit()
         e.putInt("lastPos", lastPosition)
+        e.putString("tvSelectedItem", tvSelectedItem.text.toString())
         e.apply()
     }
 }
