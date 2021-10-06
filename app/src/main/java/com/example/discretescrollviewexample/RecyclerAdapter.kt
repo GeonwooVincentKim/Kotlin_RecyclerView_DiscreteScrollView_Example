@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 /* RecyclerView.Adapter - Get the `RecyclerView.ViewHolder` Type from `SliderItemViewHolder` */
 class RecyclerAdapter : RecyclerView.Adapter<SliderItemViewHolder>() {
-    private val data: ArrayList<String> = ArrayList();
+    private val data: ArrayList<String> = ArrayList()
     var callback: Callback? = null
     private val clickListener = View.OnClickListener { v -> v?.let { callback?.onItemClicked(it) } }
 
@@ -22,6 +22,7 @@ class RecyclerAdapter : RecyclerView.Adapter<SliderItemViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: SliderItemViewHolder, position: Int) {
+//        holder.tvItem?.text = data[0]
 //        holder.tvItem?.text = data[0]
         holder.tvItem?.text = data[position]
     }
