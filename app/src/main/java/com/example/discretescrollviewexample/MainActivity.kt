@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity() {
         val backButton: TextView = findViewById(R.id.backButton)
         backButton.setOnClickListener{}
 
-//        val getPreferences: SharedPreferences = getSharedPreferences("lastPos", Context.MODE_PRIVATE)
-        val getPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        val getPreferences: SharedPreferences = getSharedPreferences("lastPosition", Context.MODE_PRIVATE)
+//        val getPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         lastPosition = getPreferences.getInt("lastPos", 0)
         recyclerViewExample.scrollToPosition(lastPosition)
 
@@ -88,7 +88,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        val getPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
+        val getPreferences: SharedPreferences = getSharedPreferences("lastPosition", Context.MODE_PRIVATE)
+
+//        val getPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(baseContext)
         val e: SharedPreferences.Editor = getPreferences.edit()
         e.putInt("lastPos", lastPosition)
         e.apply()
