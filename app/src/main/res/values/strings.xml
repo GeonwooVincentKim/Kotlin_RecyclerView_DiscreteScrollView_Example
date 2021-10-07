@@ -4,4 +4,9 @@
     <string name="stringTestingProject">Testing Project</string>
     <string name="stringBottomImage">bottomImage</string>
     <string name="stringSelectedItem">Selected Item:</string>
+    <string name="stringBack">Back</string>
+    <string name="stringOK">OK</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stringResult">23</string>
 </resources>
