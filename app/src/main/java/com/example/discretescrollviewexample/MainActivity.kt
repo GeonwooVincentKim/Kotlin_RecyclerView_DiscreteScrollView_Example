@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
 //    lateinit var binding : ActivityMainBinding
 
-    private val data = (1..20).toList().map { it.toString() } as ArrayList<String>
+    private val data = (33..37).toList().map { it.toString() } as ArrayList<String>
 
 //    fun findIndex(arr: ArrayList<String>, item: Int): Int {
 //        for(i in arr){
@@ -106,8 +106,31 @@ class MainActivity : AppCompatActivity() {
         recyclerViewExample.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
-                lastPosition =
-                    (recyclerViewExample.layoutManager as SliderLayoutClass).findFirstCompletelyVisibleItemPosition()
+
+                when(tvSelectedItem.text){
+                    "33" -> {
+                        lastPosition = 0
+//                        lastPosition = (recyclerViewExample.layoutManager as SliderLayoutClass).findFirstCompletelyVisibleItemPosition()
+                    }
+                    "34" -> {
+                        lastPosition = 1
+//                        lastPosition = (recyclerViewExample.layoutManager as SliderLayoutClass).findFirstCompletelyVisibleItemPosition()
+                    }
+                    "35" -> {
+                        lastPosition = 2
+//                        lastPosition = (recyclerViewExample.layoutManager as SliderLayoutClass).findFirstCompletelyVisibleItemPosition()
+                    }
+                    "36" -> {
+                        lastPosition = 3
+//                        lastPosition = (recyclerViewExample.layoutManager as SliderLayoutClass).findFirstCompletelyVisibleItemPosition()
+                    }
+                    "37" -> {
+                        lastPosition = 4
+//                        lastPosition = (recyclerViewExample.layoutManager as SliderLayoutClass).findFirstCompletelyVisibleItemPosition()
+                    }
+                }
+//                lastPosition =
+//                    (recyclerViewExample.layoutManager as SliderLayoutClass).findFirstCompletelyVisibleItemPosition()
             }
         })
 
@@ -122,6 +145,9 @@ class MainActivity : AppCompatActivity() {
             e.putString("tvSelectedItem", tvSelectedItem.text.toString())
             e.apply()
 
+            data.forEach{
+                Log.d("Test", it)
+            }
 //            val bundle = Bundle()
 //            bundle.putInt("lastPos", lastPosition)
 //            bundle.putString("tvSelectedItem", tvSelectedItem.text.toString())
